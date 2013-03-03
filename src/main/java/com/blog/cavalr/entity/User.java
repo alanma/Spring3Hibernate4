@@ -2,18 +2,33 @@ package com.blog.cavalr.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="blog_user")
 public class User {
 
+	@Id
+	@Column(name="userName", nullable = false)
     private String userName;
 
+	@Column(name="first_name", nullable = false)
     private String firstName;
 
+	@Column(name="last_name", nullable = false)
     private String lastName;
 
+	@Column(name="password", nullable = false)
     private String password;
 
+	@Column(name="created_on", nullable = false)
     private Date createdOn;
 
+	@Transient
     private Date lastLoginOn;
 
     public User() {
